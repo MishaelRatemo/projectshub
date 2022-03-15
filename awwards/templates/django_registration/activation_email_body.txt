@@ -1,0 +1,30 @@
+
+Welcome to Mismora projects Awwards 
+
+
+ {{user.username}}?
+
+Congratulations! You're almost set to start using Awwards. Just click the link below to validate your email address.
+      
+      
+      {{site.name}}/accounts/activate/{{activation_key}}
+
+Alternatively you can copy the link and paste it in your browser
+
+        {{site.name}}/accounts/activate/{{activation_key}}
+
+
+
+Note: You must perform this validation within the next {{expiration_days}} days. to keep your new account enabled.
+
+Account details
+    >> Email: {{user.email}}
+    >> Account Name: {{user.username}}    
+
+Thanks for becoming part of Us.
+
+
+Regard,
+Support team.
+
+*******************************************************************************
