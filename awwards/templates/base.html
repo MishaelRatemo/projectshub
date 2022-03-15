@@ -1,4 +1,4 @@
-
+{% load bootstrap5 %}
 {% load static%}
 <!DOCTYPE html>
 <html>
@@ -16,6 +16,12 @@
   {% if title %}
      <title>{{title}}</title> 
   {% endif %}
+  
+  {% block style %}
+  {% bootstrap_css %}
+    
+  {% endblock %}
+    
 
 </head>
 <body >
