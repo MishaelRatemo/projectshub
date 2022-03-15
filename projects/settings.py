@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import os
+import cloudinary
+import cloudinary.uploader
+import  cloudinary.api
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -140,11 +143,24 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 # Get environment variables
-ACCOUNT_ACTIVATION_DAYS= int(os.environ.get('ACCOUNT_ACTIVATION_DAYS'))
-DEFAULT_FROM_EMAIL=os.environ.get('DEFAULT_FROM_EMAIL')
-EMAIL_HOST_PASSWORD=os.environ.get('EMAIL_HOST_PASSWORD')
-EMAIL_HOST_USER=os.environ.get('EMAIL_HOST_USER')
-EMAIL_HOST=os.environ.get('EMAIL_HOST')
-EMAIL_PORT= int(os.environ.get('EMAIL_PORT'))
-EMAIL_USE_TLS =os.environ.get('EMAIL_USER_TLS')
+# ACCOUNT_ACTIVATION_DAYS= int(os.environ.get('ACCOUNT_ACTIVATION_DAYS'))
+# DEFAULT_FROM_EMAIL=os.environ.get('DEFAULT_FROM_EMAIL')
+# EMAIL_HOST_PASSWORD=os.environ.get('EMAIL_HOST_PASSWORD')
+# EMAIL_HOST_USER=os.environ.get('EMAIL_HOST_USER')
+# EMAIL_HOST=os.environ.get('EMAIL_HOST')
+# EMAIL_PORT= int(os.environ.get('EMAIL_PORT'))
+# EMAIL_USE_TLS =os.environ.get('EMAIL_USER_TLS')
 
+ACCOUNT_ACTIVATION_DAYS=2
+DEFAULT_FROM_EMAIL='mishymmoringa@gmail.com'
+EMAIL_HOST_PASSWORD='@Mypassword'
+EMAIL_HOST_USER='mishymmoringa@gmail.com'
+EMAIL_HOST='smtp.gmail.com'
+EMAIL_PORT=587
+EMAIL_USE_TLS = True
+
+cloudinary.config(
+    cloud_name='mishmish',
+    api_key='739237125342173',
+    api_secret='0m3FpTW7VNcn3l6_bcja3ztpscw',
+)
