@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load bootstrap5 %}
+{% block content %}
+{{block.super}}
+<div class="container">
+    <div class="">
+        <div class="col-6 m-auto shadow p-3 ">
+            <div class="d-flex justify-content-end p-1 mt-2">
+                <button class="btn btn-outline-success"><a class="text-decoration-none"
+                        href="{% url 'edit_profile' user.username  %}">Update Profile</a></button>
+            </div>
+            <img class="rounded-circle img-fluid " src="{{ user.profile.profile_image.url }}">
+            <h5 class="">Name: {{user.username}}</h5>
+            <p class=""> Email: {{user.profile.email}}</p>
+            <p class=""> Bio:{{user.profile.user_bio}}</p>
+            <p class=""> Location: {{user.profile.location}}</p>
+            <p class=""> Phone: {{user.profile.phone}}</p>
+        </div>
+        <div class=" container ">
+            <h1 class="text-center">Projects you have posted</h1>
+            <main class="d-flex flex-wrap  justify-content-around align-items-center">
+                {% for project in projects %}
+                <div class="col-md-6 col-sm-8" style="margin-bottom:15px;">
+                    <div class="body">
+                        <img type="" class="img-fluid" class="img-responsive" src="{{project.landing_page.url }}" alt=""
+                            width="100%" ; height="200px" ;>
+                    </div>
+                    <div class="card-header" style="background-color:white; font-size: 13px;">
+                        <p><strong>{{project.title}}</strong></p>
+                        <p>{{project.description}}</p>
+                        Posted on: &nbsp; &nbsp; &nbsp; {{project.post_date}}
+                    </div>
+                    <div class="card-footer" style="background-color:white;">
+                        <p>By <strong>{{user}}</strong></p>
+                    </div>
+                </div>
+                {% endfor %}
+            </main>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <div class="row">
+
+
+        <div class="row text-center">
+        {% if projects %}
+            <h3 class="py-4 text-center">
+                We found {{ projects | length}} search Results for <i class="text-decoration-underline">{{message}}</i> 
+            </h3>
+        {% else %}
+            <h5>Sorry,Your search - {{message}} - did not match any categories</h5>
+            <h5>Suggestions:</h5>
+            <ul class="text-right">
+                <li>Make sure that all words are spelled correctly.</li>
+                <li>Try different keywords</li>
+                <li>Try more general keywords  </li> 
+            </ul>
+        {% endif %}
+    </div>
+
+        <div class="row">
+            {% for project in projects %}
+            <div class="col-md-4">
+                <div class="card-group wow fadeInLeft" style="margin:2%;" data-aos='fade-up'>
+                    <div class="view overlay zoom ">
+                        <img src="{{project.landing_page.url}}" class="card-img-top">
+                        <div class="mask flex-center rgba-black-strong">
+                            <a href="{% url 'projects' project.id %}" class="btn btn-pink">VIEW <i
+                                    class="far fa-chevron-double-right"></i> </a>
+                        </div>
+                    </div>
+
+                    <div class="card-body" style="border:2px #00BCD4;">
+                        <a href="{% url 'projects' project.pk %}">
+                            <h5 class="strong-text"> <strong>{{project.title}}</strong> </h5>
+                        </a>
+                        <hr class="bg-info">
+
+                        {% endfor %}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<main class="container">
+    <div class="container">
+        <h2 class="text-muted text-center">Recent Project Posts</h2>
+    </div>
+    <div class="row">
+        {% for project in projects %}
+        <div class="col-md-4 ">
+            <div class="card-group wow fadeInLeft" style="margin:2%;" data-aos='zoom-in'>
+                <div class="view overlay zoom ">
+                    <img src="{{project.landing_page.url}}" class="card-img-top">
+                    <div class="mask flex-center rgba-black-strong">
+                        <a href="{% url 'projects' project.pk %}" class="btn btn-pink">VIEW <i
+                                class="far fa-chevron-double-right"></i> </a>
+                    </div>
+                </div>
+    
+                <div class="card-body bg-secondary text-light" style="border:2px #193feb;">
+                    <a href="{% url 'projects' project.pk %}">
+                        <h5 class="strong-text"> <strong>{{project.title}}</strong> </h5>
+                    </a>
+                    <hr class="bg-info">
+                    <p class="black-text pull-right">{{project.post_date|date:"F d,Y"}} {{project.post_date|timesince}} ago
+                    </p>
+                    <h6>By {{project.profile}}</h6>
+    
+                </div>
+    
+            </div>
+    
+        </div>
+        {% endfor %}
+    </div>
+    
+</main>
+{% endblock %}

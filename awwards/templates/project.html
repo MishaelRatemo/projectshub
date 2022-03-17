@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+{% load bootstrap5 %}
+{% block content %}
+<div class="container">
+    
+    <div class="view overlay">
+        <img src="{{projects.landing_page.url}}" width='100%' height='450vh'>
+        <div class="rates">  </div>
+        <div class="mask flex-center rgba-black-light">
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-3">
+            <h3 class="">Content</h3>
+            <hr class="bg-default"> <br>
+            <h4 class="text-center   btn rounded-pill btn-primary">{{content}}</h4>
+        </div>
+        <div class="col-md-3">
+            <h3 class="">Usability</h3>
+            <hr class="bg-success"> <br>
+            <h4 class="text-center  btn rounded-pill btn-info">{{usability}}</h4>
+        </div>
+        <div class="col-md-3">
+            <h3 class="">Design</h3>
+            <hr class="bg-info"> <br>
+            <h4 class="text-center  btn rounded-pill btn-success">{{design}}</h4>
+        </div>
+        <div class="col-md-3">
+            <h3 class="">Average</h3>
+            <hr class="bg-danger"> <br>
+            <h4 class="text-center  btn rounded-pill btn-secondary">{{average}}</h4>
+        </div>
+    </div>
+    {% if user.is_authenticated %}
+        <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#rate">Rate </button>
+        <a href="{{projects.link}}" class="btn btn-pink btn-md pull-right " target="_blank">Go to site</a>
+
+    {% if user.id not in auth %}
+    <div class="modal fade" id="rate" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="staticBackdropLabel">Vote for this project</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="/projects/{{projects.id}}/" method="POST">
+                    {% csrf_token %}
+                    {% bootstrap_form form %}
+                    <button class="btn btn-outline-info modal-footer d-flex justify-content-center" type="submit">Submit  </button>
+                </form>
+            </div>
+        
+          </div>
+        </div>
+      </div>
+       
+    {%else%}
+        <p class="alert alert-success">Thanks for your rating</p>
+    {%endif %}
+
+    {% else %}
+         <a href="/accounts/login/" class="btn btn-outline-info ">Log in to rate</a>
+    {% endif %}
+</div>
+<div class="card container comments">
+    <div class="card-header">
+        <h4> Total Votes: {{all|length}} </h4>
+    </div>
+    <div class=" list-group">
+        <ul class="list-group">
+            {%if all%}
+            <table id='comm' class="table">
+                <th>Voters</th>
+                <th>Rating</th>
+                {%for vote in all%}<tr>
+                    <td> <img src="{{vote.user.profile.profile_image.url}}" alt="" width='30px' height="30px">
+                        {{vote.user}}</td>
+                    <td>
+                        <div class="design">
+                            <a href="" class="scores">{{vote.design}}.0</a>
+                            <a href="">{{vote.usability}}.0</a>
+                            <a class='b' href="">{{vote.content}}.0</a>
+                        </div>
+                    </td>
+                    {%endfor%}
+            </table>
+            {%else%}
+            <li class="list-group-item alert alert-info">No votes Available</li>
+            {%endif%}
+        </ul>
+    </div>
+</div>
+</div>
+</div>
+<div>
+</div>
+{% endblock %}

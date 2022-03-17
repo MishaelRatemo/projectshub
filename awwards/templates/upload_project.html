@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load bootstrap5 %}
+{% load static%}
+
+  <title>New Post</title>
+
+</head>
+{% block content %}
+
+  <div class="container d-flex justify-content-center align-items-center" >
+
+    <form class="shadow p-4" action="{% url 'post_project'%}" method="post" enctype="multipart/form-data">
+      {%csrf_token%}
+
+      {% bootstrap_form form %}
+      <input type="submit" class="btn btn-success btn-lg" value="Post">
+    </form>
+  </div>
+{% endblock %}
