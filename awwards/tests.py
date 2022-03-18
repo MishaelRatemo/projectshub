@@ -43,3 +43,9 @@ class TestProjectPosts(TestCase):
         after = ProjectPosts.objects.all()
         self.assertTrue(len(after) < 1)
         
+class TestRatings(TestCase):
+    def setUp(self):
+        self.test_rate = User(user='Mishael')
+        self.test_rate.save()
+        self.test_rate = Ratings(content=2, design=5,userbility=8.7)
+    
