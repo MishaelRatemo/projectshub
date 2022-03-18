@@ -1,12 +1,15 @@
-# Instagram Clone
+# mismoraawward
 
 # author
 Mishael Ratemo
  
 # Project descriotion
-A personal gallery web application to display great images by categories and locations from around the world.
-
-# Live [Demo](https://mismorainsta.herokuapp.com/)
+An appplication allowing user to post their projects and allow to be rated based on:-
+        + userbility
+        + content
+        + design
+on ascale of 1-10.
+# Live [Demo](https://mismoraawward.herokuapp.com/)
 
 # User story
 
