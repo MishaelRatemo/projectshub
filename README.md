@@ -75,13 +75,14 @@ Once in the cloned folder run the following commands:-
         $ source virtual/bin/env  -- activate  the virtual
         $ pip install -r requirements.txt - this installs all dependecies necessary for app to run
 * #### Setup Configurations and Databases
-        $ python3 manage.py makemigrations instagram 
+        $ python3 manage.py makemigrations  
+        $  python3 manage.py migrate
 
 * #### Running the application
         $ python3 manage.py runserver
 
 * #### Running the application
-        $ python3 manage.py test instagram
+        $ python3 manage.py test projects
 
 * #### Browse app
         $ 127.0.0.1:8000
