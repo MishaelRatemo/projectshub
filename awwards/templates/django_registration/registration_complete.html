@@ -3,12 +3,22 @@
 
 {% block content %}
     <div class="container">
-        <h1 class=" text-center text-success">
-            Account created successfully
-        </h1>
-        <p>
-            Check your mail  account to activate you account
-        </p>
+        <div class="card text-center col-6 m-auto">
+            <h1 class=" text-center text-success">
+                Account created successfully
+            </h1>
+            <div class="card-header">
+               <h1 class="text-center p-3"> EMAIL VERIFICATION</h1>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Thank you for signing up for a Mismora Awwards account</h5>
+              <p class="card-text mb-3">Please verify your email address in order to access your Mismora Awwards account.</p>
+              <p class="card-text">We sent an email to <strong>{{user.email}}</strong></p>
+              <p class="card-text">To continue, please check your inbox and verify your email address.</strong></p>
+              
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>            
+          </div>
     </div>
     
 {% endblock content %}
