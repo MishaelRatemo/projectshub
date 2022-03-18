@@ -32,10 +32,10 @@ on ascale of 1-10.
 ## Cloning
 * Open Terminal {Ctrl+Alt+T}
 
-* git clone ``git@github.com:MishaelRatemo/instagram_clone_django.git``
+* git clone ``git@github.com:MishaelRatemo/projectshub.git``
 
  + or
- git clone ``https://github.com/MishaelRatemo/instagram_clone_django.git``
+ git clone ``https://github.com/MishaelRatemo/projectshub.git``
 
 * cd instagram_clone_django
 
@@ -46,22 +46,28 @@ on ascale of 1-10.
 * virtual environment - see more on how to install virtual on google
 * heroku for online deployment.
 #### Requirements
-+   asgiref==3.5.0
-+   backports.zoneinfo==0.2.1
-+   beautifulsoup4==4.10.0
-+   dj-database-url==0.5.0
-+   Django==4.0.3
-+   django-bootstrap-v5==1.0.11
-+   django-heroku==0.3.1
-+   django-registration-redux==2.9
-+   gunicorn==20.1.0
-+   Pillow==9.0.1
-+   psycopg2==2.9.3
-+   python-decouple==3.6
-+   soupsieve==2.3.1
-+   sqlparse==0.4.2
-+   tzdata==2021.5
-+   whitenoise==6.0.0
+        _ asgiref==3.5.0
+        _ backports.zoneinfo==0.2.1
+        _ beautifulsoup4==4.10.0
+        _ certifi==2021.10.8
+        _ cloudinary==1.29.0
+        _ confusable-homoglyphs==3.2.0
+        _ dj-database-url==0.5.0
+        _ Django==4.0.3
+        _ django-bootstrap-v5==1.0.11
+        _ django-crispy-forms==1.14.0
+        _ django-heroku==0.3.1
+        _ django-registration==3.2
+        _ django-tinymce==3.4.0
+        _ gunicorn==20.1.0
+        _ Pillow==9.0.1
+        _ psycopg2==2.9.3
+        _ python-decouple==3.6
+        _ six==1.16.0
+        _ soupsieve==2.3.1
+        _ sqlparse==0.4.2
+        _ urllib3==1.26.8
+        _ whitenoise==6.0.0
 ### Running the application
 Once in the cloned folder run the following commands:-
  * #### create Django environnent
