@@ -20,4 +20,26 @@ class TestProfile(TestCase):
         after = Profile.objects.all()
         self.assertTrue(len(after) > 0)
 
+class TestProjectPosts(TestCase):
+    def setUp(self):
+        self.project_post_test = Profile(user='Mishael', user=User(username='Mishael'))
+        self.project_post_test.save()
 
+        self.project_post_test = ProjectPosts(landing_page='github.png', title='test', 
+                                              description='test test test',
+                                              link='https://githubwarehouse.netlify.app/' ,
+                                              user=self.profile_test)
+
+    def test_insatance(self):
+        self.assertTrue(isinstance(self.project_post_test, ProjectPosts))
+
+    def test_save_image(self):
+        self.image_test.save_image()
+        images = ProjectPosts.objects.all()
+        self.assertTrue(len(images) > 0)
+
+    def test_delete_image(self):
+        self.project_post_test.delete_image()
+        after = ProjectPosts.objects.all()
+        self.assertTrue(len(after) < 1)
+        
