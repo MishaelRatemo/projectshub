@@ -2,8 +2,9 @@
 
 
 {% block content %}
+<div class="container">
     <div class="container">
-        <div class="card text-center col-6 m-auto">
+        <div class="card text-center col-6 col-md-8 col-sm-10 m-auto">
             <h1 class=" text-center text-success">
                 Account created successfully
             </h1>
@@ -16,10 +17,10 @@
               <p class="card-text">We sent an email to <strong>{{user.email}}</strong></p>
               <p class="card-text">To continue, please check your inbox and verify your email address.</strong></p>
               
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <a href="/" class="btn btn-primary">Go Home</a>
             </div>            
           </div>
     </div>
-    
+</div>
 {% endblock content %}
     
